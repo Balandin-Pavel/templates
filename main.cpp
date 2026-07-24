@@ -21,9 +21,9 @@ char* GetPath(int argc, char** argv, const char* long_flag, const char* short_fl
 }
 void DelSp(char arr[]) {
     int j = 0;
-    while (arr[j] == ' ' || arr[j] == '\n') j++;
+    while (arr[j] == ' ' || arr[j] == '\n' || arr[j] == '\r') j++;
     int left = j;
-    while (arr[j] != ' ' && j < strlen(arr)) j++;
+    while (arr[j] != ' ' && arr[j] != '\n' && arr[j] != '\r' && j < strlen(arr)) j++;
     int f = 0;
     for (int k = left; k < j; k++) arr[f++] = arr[k];
     arr[f] = '\0';
